@@ -422,46 +422,63 @@ def fracciones():
     if int(operacion) == 3:
         fraccion = ""
         fraccion = input("Ingrese numero:")
-        if fraccionDenominador(fraccion) != "0":
-            if fraccionValida(fraccion):
-                while fraccion != "=":
-                    resultado = multiplicarFraccion(resultado, fraccion)
-                    if fraccionValidaST(resultado):
-                        fraccion = input("Ingrese numero:")
-                        if fraccionValida(fraccion):
-                            if fraccionDenominador(fraccion) == "0":
-                                print("El denominador no puede ser cero.")
+        if fraccionNumerador(fraccion) != "0":
+            if fraccionDenominador(fraccion) != "0":
+                if fraccionValida(fraccion):
+                    while fraccion != "=":
+                        resultado = multiplicarFraccion(resultado, fraccion)
+                        if fraccionValidaST(resultado):
+                            fraccion = input("Ingrese numero:")
+                            if fraccionNumerador(fraccion) != "0":
+                                #if fraccionValida(fraccion):
+                                if fraccionDenominador(fraccion) == "0":
+                                    print("El denominador no puede ser cero.")
+                                    fraccion = "="
+                                    resultado = ""
+                            else:
+                                print(f"Resultado 0")
                                 fraccion = "="
                                 resultado = ""
-                    else:
-                        fraccion = "="
-                if fraccionValidaST(resultado):
-                    if resultado != "":
-                        print(f"Resultado {resultado}")
+                        else:
+                            fraccion = "="
+                    if fraccionValidaST(resultado):
+                        if resultado != "":
+                            print(f"Resultado {resultado}")
+            else:
+                print("El denominador no puede ser cero.")
         else:
-            print("El denominador no puede ser cero.")
+            print(f"Resultado 0")
     #División
     if int(operacion) == 4:
         fraccion = ""
         fraccion = input("Ingrese numero:")
-        if fraccionDenominador(fraccion) != "0":
-            if fraccionValida(fraccion):
-                while fraccion != "=":
-                    resultado = dividirFraccion(resultado, fraccion)
-                    if fraccionValidaST(resultado):
-                        fraccion = input("Ingrese numero:")
-                        if fraccionValida(fraccion):
-                            if fraccionDenominador(fraccion) == "0":
+        if fraccionNumerador(fraccion) != "0":
+            if fraccionDenominador(fraccion) != "0":
+                if fraccionValida(fraccion):
+                    while fraccion != "=":
+                        resultado = dividirFraccion(resultado, fraccion)
+                        if fraccionValidaST(resultado):
+                            fraccion = input("Ingrese numero:")
+                            if fraccionDenominador(fraccion) != "0":
+                                if fraccionValida(fraccion):
+                                    #if fraccionDenominador(fraccion) == "0":
+                                    if fraccionNumerador(fraccion) == "0":
+                                        print("El denominador no puede ser cero.")
+                                        fraccion = "="
+                                        resultado = ""
+                            else:
                                 print("El denominador no puede ser cero.")
                                 fraccion = "="
                                 resultado = ""
-                    else:
-                        fraccion = "="
-                if fraccionValidaST(resultado):
-                    if resultado != "":
-                        print(f"Resultado {resultado}")
+                        else:
+                            fraccion = "="
+                    if fraccionValidaST(resultado):
+                        if resultado != "":
+                            print(f"Resultado {resultado}")
+            else:
+                print("El denominador no puede ser cero.")
         else:
-            print("El denominador no puede ser cero.")
+            print(f"Resultado 0")
 
 #Calculadora Conversora Trabajo Grupal Final - Ceballos - Yaben
 
@@ -594,4 +611,3 @@ while opcion != '4':
         fracciones()
     elif opcion == '3':
         conversora()
-
