@@ -367,7 +367,7 @@ def fracciones():
     print("3: Multiplicación")
     print("4: División")
     operacion = input()
-    print(f"operacion '{operacion}'")
+    #print(f"Operación '{operacion}'")
     resultado = ""
     
     if operacion != "1" and operacion != "2" and operacion != "3" and operacion != "4":
